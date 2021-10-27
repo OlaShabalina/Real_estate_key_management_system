@@ -7,11 +7,10 @@ const db = require('../database');
 router.get('/', (req,res) => {
 
     // getting all the ratings from the db
-    db.oneOrNone(`SELECT key_number FROM properties WHERE unit_number='73' AND building_number='416A';`)
-    .then((keyNumber) => {
+    db.any(`SELECT * FROM properties;`)
+    .then((propertyInfo) => {
         
-        console.log(keyNumber);
-        res.json({ keyNumber });
+        res.json({ propertyInfo });
     })
     .catch((error) => {
         
