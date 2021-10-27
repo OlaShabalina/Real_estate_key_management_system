@@ -8,8 +8,8 @@ const PORT = process.env.PORT || 3000;
 
 // routers
 
-const homeRouter = require('./routes/homepage');
-const errorRouter = require('./routes/errorPage')
+const homeRouter = require('./routes/home');
+// const errorRouter = require('./routes/errorPage')
 
 // BODY PARSER
 app.use(express.urlencoded({ extended: false }));
@@ -27,7 +27,7 @@ app.use(express.static('public'));
 //displaying pages using routers
 
 app.use('/', homeRouter);
-app.use('*', errorRouter);
+// app.use('*', errorRouter);
 
 
 app.listen(PORT, () => {
