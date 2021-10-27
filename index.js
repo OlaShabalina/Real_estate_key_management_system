@@ -9,6 +9,7 @@ const PORT = process.env.PORT || 3000;
 // routers
 
 const homeRouter = require('./routes/home');
+const apiRouter = require('./routes/api');
 // const errorRouter = require('./routes/errorPage')
 
 // BODY PARSER
@@ -27,6 +28,7 @@ app.use(express.static('public'));
 //displaying pages using routers
 
 app.use('/', homeRouter);
+app.use('/api_key_number', apiRouter);
 // app.use('*', errorRouter);
 
 
