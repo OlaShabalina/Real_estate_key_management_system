@@ -1,0 +1,35 @@
+<%- include('../partials/head.ejs') %>
+<title>Key Search - MICM</title>
+</head>
+<body>
+
+<!-- property search form -->
+<div class="container col-sm-7 col-md-5">
+    <h1 class="text-center">Keys</h1>
+    <div class="container">
+
+      <form class="form-group container" action="/add-keys" method="POST" id="add-keys-form" novalidate>
+        <input type="text" class="form-control" id="unit_number" name="unit_number" placeholder="Unit number">
+        <input type="text" class="form-control" id="building_number" name="building_number" placeholder="Building number">
+        <input type="text" class="form-control" id="street_name" name="street_name" placeholder="Street name">
+        <div class="row">
+          <div class="col">
+            <h4 class="text-center"> SBP - </h4>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control" id="key_number" name="key_number" placeholder="Key number" min="1400" max="1500">
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <button type="submit" class="btn btn-secondary col-md-5 col-sm-7" value="Register">Add property</button>
+          <a class="text-center" href="/">Back to key search</a>
+        </div>
+      </form>
+    </div>
+    
+</div>
+
+<%- include('../partials/footer.ejs') %>
+<script src="home.js"></script>
+</body>
+</html>
