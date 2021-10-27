@@ -4,11 +4,16 @@
   "description": "app to get a key number by using the property address",
   "main": "index.js",
   "scripts": {
+    "dev": "nodemon -r dotenv/config index.js",
+    "start": "node -r dotenv/config index.js",
+    "create-db": "psql -U postgres -f sql/create-db.sql",
+    "create-table": "psql -U postgres -d keys -f sql/create-table.sql",
+    "seed-table": "psql -U postgres -d keys -f sql/seed-table.sql",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/OlaShabalina/Real_estate_key_management_system.git"
+    "url": "https://github.com/OlaShabalina/Real_estate_key_management_system.git"
   },
   "author": "OlaShabalina",
   "license": "ISC",
