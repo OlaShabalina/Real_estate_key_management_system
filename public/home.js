@@ -30,7 +30,7 @@ $('#search-address').on('input', (e) => {
         if (propertyIsFound) {
 
           // if there is a key number in db, we show it
-          let keyNumber = $(`<h3> ${propertyIsFound.key_number} </h3>`)
+          let keyNumber = $(`<h3> SBP - ${propertyIsFound.key_number} </h3>`)
           $(".key-number").html(keyNumber);
         } else {
 
