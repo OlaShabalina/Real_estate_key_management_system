@@ -12,12 +12,11 @@
       <form class="form-group container" action="/add-keys" method="POST" id="add-keys-form" novalidate>
 
         <!-- errors from input validation -->
-        <ul>
-          <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
-                  <li class="text-danger"><%= error.message %> </li>
-              <% }) %>
-          <% } %>
-        </ul>
+        <% if (typeof errors != 'undefined') { %> 
+          <% errors.forEach(error => { %>
+                <p class="text-danger text-center error-message"><%= error.message %> </p>
+            <% }) %>
+        <% } %>
 
         <input type="text" class="form-control" id="unit_number" name="unit_number" placeholder="Unit number">
         <input type="text" class="form-control" id="building_number" name="building_number" placeholder="Building number">

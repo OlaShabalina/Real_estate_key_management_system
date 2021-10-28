@@ -9,7 +9,6 @@
 }
 
 h1 {
-  float: left;
   width: 100%;
   font-size: 32px;
   color: #2676D2;
@@ -110,4 +109,9 @@ footer {
 .back-to-home-page {
   font-size: 20px;
   color: #00559D;
+}
+
+.error-message {
+  font-style: italic;
+  letter-spacing: 1px;
 }
