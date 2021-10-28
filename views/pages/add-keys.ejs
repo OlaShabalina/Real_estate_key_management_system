@@ -1,5 +1,6 @@
 <%- include('../partials/head.ejs') %>
-<title>Key Search - MICM</title>
+<link rel="stylesheet" href="/styles.css">
+<title>Add new property - MICM</title>
 </head>
 <body>
 
@@ -14,15 +15,15 @@
         <input type="text" class="form-control" id="street_name" name="street_name" placeholder="Street name">
         <div class="row">
           <div class="col">
-            <h4 class="text-center"> SBP - </h4>
+            <h4 class="key-code"> SBP - </h4>
           </div>
           <div class="col">
-            <input type="number" class="form-control" id="key_number" name="key_number" placeholder="Key number" min="1400" max="1500">
+            <input type="number" class="form-control key-code-input" id="key_number" name="key_number" placeholder="Key number" min="1400" max="1500">
           </div>
         </div>
         <div class="row d-flex justify-content-center">
-          <button type="submit" class="btn btn-secondary col-md-5 col-sm-7" value="Register">Add property</button>
-          <a class="text-center" href="/">Back to key search</a>
+          <button type="submit" class="button add-key-button" value="Register">Add property</button>
+          <a class="text-center back-to-home-page with-underline" href="/">Back to key search</a>
         </div>
       </form>
     </div>
