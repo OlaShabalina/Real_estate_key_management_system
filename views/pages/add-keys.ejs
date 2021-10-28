@@ -10,6 +10,15 @@
     <div class="container">
 
       <form class="form-group container" action="/add-keys" method="POST" id="add-keys-form" novalidate>
+
+        <!-- errors from input validation -->
+        <ul>
+          <% if (typeof errors != 'undefined') { %> <% errors.forEach(error => { %>
+                  <li class="text-danger"><%= error.message %> </li>
+              <% }) %>
+          <% } %>
+        </ul>
+
         <input type="text" class="form-control" id="unit_number" name="unit_number" placeholder="Unit number">
         <input type="text" class="form-control" id="building_number" name="building_number" placeholder="Building number">
         <input type="text" class="form-control" id="street_name" name="street_name" placeholder="Street name">
