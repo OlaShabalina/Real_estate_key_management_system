@@ -120,3 +120,15 @@ footer {
   font-style: italic;
   letter-spacing: 1px;
 }
+
+.error-img-container{
+  display: flex;
+}
+
+.error-img-container img{
+  width: 100%;
+}
+
+.error-message {
+  color: red;
+}

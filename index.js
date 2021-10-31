@@ -12,7 +12,7 @@ const path = require('path');
 const homeRouter = require('./routes/home');
 const apiRouter = require('./routes/api');
 const addKeysRouter = require('./routes/add-keys');
-// const errorRouter = require('./routes/errorPage')
+const errorRouter = require('./routes/error-page')
 
 // BODY PARSER
 app.use(express.urlencoded({ extended: false }));
@@ -31,7 +31,7 @@ app.use(express.static('public'));
 app.use('/add-keys', addKeysRouter);
 app.use('/api_key_number', apiRouter);
 app.use('/', homeRouter);
-// app.use('*', errorRouter);
+app.use('/*', errorRouter);
 
 
 app.listen(PORT, () => {
