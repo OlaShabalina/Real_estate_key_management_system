@@ -132,3 +132,13 @@ footer {
 .error-message {
   color: red;
 }
+
+.edit-link {
+  font-style: italic;
+  color: #838383;
+}
+
+.edit-link:hover {
+  cursor: pointer;
+  color:#00559D;
+}
