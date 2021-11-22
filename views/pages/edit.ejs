@@ -1,0 +1,44 @@
+<%- include('../partials/head.ejs') %>
+<link rel="stylesheet" href="/styles.css">
+<title>Edit property - MICM</title>
+</head>
+<body>
+
+<!-- property search form -->
+<div class="container col-sm-7 col-md-5">
+    <h1 class="text-center">Keys</h1>
+    <div class="container">
+
+      <form class="form-group container" action="/add-keys" method="POST" id="add-keys-form" novalidate>
+
+        <!-- errors from input validation -->
+        <% if (typeof errors != 'undefined') { %> 
+          <% errors.forEach(error => { %>
+                <p class="text-danger text-center error-message"><%= error.message %> </p>
+            <% }) %>
+        <% } %>
+
+        <input type="text" class="form-control" id="unit_number" name="unit_number"  value="<%= unit_number %>" placeholder="Unit number">
+        <input type="text" class="form-control" id="building_number" name="building_number" value="<%= building_number %>" placeholder="Building number">
+        <input type="text" class="form-control" id="street_name" name="street_name" value="<%= street_name %>" placeholder="Street name">
+        <div class="row">
+          <div class="col">
+            <h4 class="key-code"> SBP - </h4>
+          </div>
+          <div class="col">
+            <input type="number" class="form-control key-code-input" id="key_number" name="key_number" placeholder="Key number" value="<%= key_number %>">
+          </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+          <button type="submit" class="button add-key-button" value="Register">Save changes</button>
+          <button type="submit" class="button delete-button" value="Delete">Delete key</button>
+          <a class="text-center back-to-home-page with-underline" href="/">Back to key search</a>
+        </div>
+      </form>
+    </div>
+    
+</div>
+
+<%- include('../partials/footer.ejs') %>
+</body>
+</html>

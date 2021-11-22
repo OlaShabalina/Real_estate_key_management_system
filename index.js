@@ -12,7 +12,8 @@ const path = require('path');
 const homeRouter = require('./routes/home');
 const apiRouter = require('./routes/api');
 const addKeysRouter = require('./routes/add-keys');
-const errorRouter = require('./routes/error-page')
+const errorRouter = require('./routes/error-page');
+const editRoute = require('./routes/edit');
 
 // BODY PARSER
 app.use(express.urlencoded({ extended: false }));
@@ -30,6 +31,7 @@ app.use(express.static('public'));
 
 app.use('/add-keys', addKeysRouter);
 app.use('/api_key_number', apiRouter);
+app.use('/edit', editRoute);
 app.use('/', homeRouter);
 app.use('/*', errorRouter);
 
