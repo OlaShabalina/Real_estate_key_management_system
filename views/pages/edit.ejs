@@ -9,7 +9,7 @@
     <h1 class="text-center">Keys</h1>
     <div class="container">
 
-      <form class="form-group container" action="/add-keys" method="POST" id="add-keys-form" novalidate>
+      <form class="form-group container" action="/edit/<%= key_number %>" method="POST" id="add-keys-form" novalidate>
 
         <!-- errors from input validation -->
         <% if (typeof errors != 'undefined') { %> 
@@ -23,15 +23,12 @@
         <input type="text" class="form-control" id="street_name" name="street_name" value="<%= street_name %>" placeholder="Street name">
         <div class="row">
           <div class="col">
-            <h4 class="key-code"> SBP - </h4>
-          </div>
-          <div class="col">
-            <input type="number" class="form-control key-code-input" id="key_number" name="key_number" placeholder="Key number" value="<%= key_number %>">
+            <h4 class="key-code"> SBP - <%= key_number %> </h4>
           </div>
         </div>
         <div class="row d-flex justify-content-center">
-          <button type="submit" class="button add-key-button" value="Register">Save changes</button>
-          <button type="submit" class="button delete-button" value="Delete">Delete key</button>
+          <button type="submit" class="button add-key-button" value="Save">Save changes</button>
+          <button type="button" class="button delete-button" value="Delete">Delete key</button>
           <a class="text-center back-to-home-page with-underline" href="/">Back to key search</a>
         </div>
       </form>

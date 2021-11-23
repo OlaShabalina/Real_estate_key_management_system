@@ -16,13 +16,28 @@ router.get('/:id', (req,res) => {
       res.render('pages/edit', { unit_number, building_number, street_name, key_number });
     }
   })
-  
+  .catch(error => {
+    console.log(error)
+  });  
 
 });
 
 
 // adding properties and keys
-router.post('/', (req,res) => {
+router.post('/:id', (req,res) => {
+  const { id } = req.params; 
+  const { unit_number, building_number, street_name } = req.body;
+  console.log(id)
+  console.log(req.body)
+
+  db.any('UPDATE properties SET unit_number = $1, building_number = $2, street_name = $3 WHERE key_number = $4;', [ unit_number, building_number, street_name, id ])
+  .then(() => {
+    
+    res.redirect(`/edit/${id}`);
+  })
+  .catch(error => {
+    console.log(error)
+  });  
 
 });
 
