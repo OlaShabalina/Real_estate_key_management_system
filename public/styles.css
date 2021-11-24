@@ -19,7 +19,9 @@ h1 {
 
 .button {
   display: inline-block;
-  width: auto;
+  width: 80%;
+  min-width: 160px;
+  max-width: 300px;
   border: 1px solid #ECECEC;
   border-radius: 21px;
   font-size: 16px;
@@ -39,14 +41,21 @@ h1 {
 
 /* made button bigger on the add key page */
 .add-key-button {
-  margin: 20px 0;
+  margin: 5px 0;
   padding: 10px 20px 13px 20px;
 }
 
+.delete-record-form {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
 .delete-button {
-  margin: 20px 20px;
+  margin: 5px 20px;
   padding: 10px 20px 13px 20px;
-  color: red;
+  color: white;
+  background-color: rgb(238, 94, 94);
 }
 
 a {

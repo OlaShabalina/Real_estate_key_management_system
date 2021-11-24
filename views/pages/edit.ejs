@@ -12,10 +12,8 @@
       <form class="form-group container" action="/edit/<%= key_number %>" method="POST" id="add-keys-form" novalidate>
 
         <!-- errors from input validation -->
-        <% if (typeof errors != 'undefined') { %> 
-          <% errors.forEach(error => { %>
-                <p class="text-danger text-center error-message"><%= error.message %> </p>
-            <% }) %>
+        <% if (locals.messages) { %> 
+            <p class="text-danger text-center error-message"><%= JSON.stringify(locals.messages) %> </p>
         <% } %>
 
         <input type="text" class="form-control" id="unit_number" name="unit_number"  value="<%= unit_number %>" placeholder="Unit number">
@@ -28,9 +26,12 @@
         </div>
         <div class="row d-flex justify-content-center">
           <button type="submit" class="button add-key-button" value="Save">Save changes</button>
-          <button type="button" class="button delete-button" value="Delete">Delete key</button>
-          <a class="text-center back-to-home-page with-underline" href="/">Back to key search</a>
+          <!-- form for delete request below -->
         </div>
+      </form>
+      <form class="delete-record-form" action="/edit/delete/<%= key_number %>" method="POST">
+        <button type="submit" class="button delete-button" value="Delete">Delete key</button> 
+        <a class="text-center back-to-home-page with-underline" href="/">Back to key search</a>      
       </form>
     </div>
     
