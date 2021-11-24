@@ -109,6 +109,10 @@ footer {
   font-size: 14px;
 }
 
+.key-code-container {
+  text-align: center;
+}
+
 .col {
   display: flex;
   align-items: center;
@@ -119,6 +123,7 @@ footer {
   font-size: 20px;
   color: #2676D2;
   font-weight: 700;
+  text-align: end;
 }
 
 .key-code-input {

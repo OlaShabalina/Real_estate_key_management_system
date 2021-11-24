@@ -7,6 +7,12 @@
     <!-- property search form -->
     <div class="search-form container col-sm-7 col-md-5">
         <h1 class="text-center">Key Finder</h1>
+        
+        <!-- success message -->
+        <% if (messages.success_msg) { %> 
+            <p class="text-success text-center error-message"><%= messages.success_msg %> </p>
+        <% } %>
+
         <a class="button" href="/add-keys">Add new property</a>
         <form id="searchForm">
             <label class="form-label" for="search-address">Please enter a property address:</label>

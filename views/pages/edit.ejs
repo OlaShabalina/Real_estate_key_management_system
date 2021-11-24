@@ -11,16 +11,21 @@
 
       <form class="form-group container" action="/edit/<%= key_number %>" method="POST" id="add-keys-form" novalidate>
 
-        <!-- errors from input validation -->
-        <% if (locals.messages) { %> 
-            <p class="text-danger text-center error-message"><%= JSON.stringify(locals.messages) %> </p>
+        <!-- errors from data validation -->
+        <% if (messages.error_msg) { %> 
+            <p class="text-danger text-center error-message"><%= messages.error_msg %> </p>
+        <% } %>
+
+        <!-- success message -->
+        <% if (messages.success_msg) { %> 
+          <p class="text-success text-center error-message"><%= messages.success_msg %> </p>
         <% } %>
 
         <input type="text" class="form-control" id="unit_number" name="unit_number"  value="<%= unit_number %>" placeholder="Unit number">
         <input type="text" class="form-control" id="building_number" name="building_number" value="<%= building_number %>" placeholder="Building number">
         <input type="text" class="form-control" id="street_name" name="street_name" value="<%= street_name %>" placeholder="Street name">
         <div class="row">
-          <div class="col">
+          <div class="key-code-container">
             <h4 class="key-code"> SBP - <%= key_number %> </h4>
           </div>
         </div>

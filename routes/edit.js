@@ -35,12 +35,14 @@ router.post('/:id', (req,res) => {
     if (keyExists) {
 
       // stopping users from duplicating property address while editing exisiting one
-      res.redirect(`/edit/${id}?message=This%20address%20is%20already%20in%20the%20system.`);
+      req.flash("error_msg", "This address is already in use.");
+      res.redirect(`/edit/${id}`);
     } else {
 
       // if the address is new/unique we change it in the system
       db.any('UPDATE properties SET unit_number = $1, building_number = $2, street_name = $3 WHERE key_number = $4;', [ unit_number, building_number, street_name, id ])
       .then(() => { 
+      req.flash("success_msg", "The address has been updated.");
       res.redirect(`/edit/${id}`);
       })
       .catch(error => {
@@ -62,6 +64,7 @@ router.post('/delete/:id', (req, res) => {
 
   db.none('DELETE FROM properties WHERE key_number = $1;', id)
   .then(() => {
+    req.flash("success_msg", `Property with key code SBP-${id} has been deleted.`);
     res.redirect('/')
   })
   .catch(error => {
