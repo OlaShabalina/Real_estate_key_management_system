@@ -48,4 +48,12 @@ Deployed version is avaialble here => http://localhost:1112/add-keys
 
 ![Captu33re](https://user-images.githubusercontent.com/88268603/139426338-caf3687f-d695-4c20-99ff-81ad9e42536a.PNG)
 
+### After using the app for 1 month and getting real life feedback from the users, new functions have been added:
+
+* Update property details for the property which already has a key code assigned (for cases when users made a typo while adding a new property to the system)
+* Delete the property once it's sold so the key code can be asigned again to another property
+
+##### Page to update the property or delete it from the system 
+![Captur3132e](https://user-images.githubusercontent.com/88268603/143219179-d9573b85-b335-425e-97a0-0e2038b20acc.PNG)
+
 
