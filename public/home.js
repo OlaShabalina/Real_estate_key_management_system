@@ -35,6 +35,9 @@ $('#search-address').on('input', (e) => {
         }
 
       })
+      .catch((error) => {
+        console.log(error);
+      });
       
     } else {
       // if search criteria doesn't include sbp - means user is looking for a property address
@@ -70,6 +73,9 @@ $('#search-address').on('input', (e) => {
           }
 
         })
+        .catch((error) => {
+          console.log(error);
+        });
 
       } else {
         
