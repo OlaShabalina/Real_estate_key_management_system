@@ -6,8 +6,8 @@ $('#search-address').on('input', (e) => {
 
   if (searchValue) {
 
-    // if the search criteria includes sbp (key code), we will be searching for keycode and not address
-    if (searchValue.toLowerCase().includes('sbp')) {
+    // if the input is a number with no text, we will be searching for keycode and not address
+    if (!isNaN(Number(searchValue))) {
 
       // in order to disregard spaces, and the way user types sbp, we will only search for last 4 digits in the db
       const keyCode = Number(searchValue.substr(-4, 4));
