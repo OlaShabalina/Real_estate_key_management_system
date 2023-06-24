@@ -23,7 +23,7 @@
   "homepage": "https://github.com/OlaShabalina/Real_estate_key_management_system#readme",
   "dependencies": {
     "dotenv": "^16.0.0",
-    "ejs": "^3.1.6",
+    "ejs": "^3.1.7",
     "express": "^4.17.1",
     "express-flash": "^0.0.2",
     "express-session": "^1.17.2",
